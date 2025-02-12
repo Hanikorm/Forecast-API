@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "Forecast-APITEST"
 include(":app")
 include(":data")
+include(":domain")
+include(":presentation")
