@@ -1,24 +1,17 @@
 package com.hanikorm.forecast_apitest
 
 import android.app.Application
-import com.hanikorm.data.repository.WeatherRepositoryImpl
-import com.hanikorm.presentation.ui.MainApp
+import com.hanikorm.forecast_apitest.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-class App : Application(){
-
-
+class App : Application() {
     override fun onCreate() {
-        MainApp.weatherRepository = WeatherRepositoryImpl()
         super.onCreate()
-        instance = this
-
-
+        // Инициализация Koin с передачей контекста и модуля
+        startKoin {
+            androidContext(this@App)
+            modules(appModule)
+        }
     }
-
-    companion object {
-        lateinit var instance: App
-            private set
-    }
-
-
 }

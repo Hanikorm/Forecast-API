@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="8dp">
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/img_weather_icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp" />
-
+    <!-- Первый ряд: Название города и описание погоды -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/txt_city_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="City Name"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/txt_weather_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp" />
+            android:text="Description"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Второй ряд: Температура и иконка погоды -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dp">
 
         <TextView
             android:id="@+id/txt_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:text="25°C"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/img_weather_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
     </LinearLayout>
 </LinearLayout>
